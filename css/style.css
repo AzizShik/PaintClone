@@ -1,12 +1,84 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
+:root {
+	--tools-bg: #333;
+	--tools-border-radius: 10px;
+}
+
 * {
 	box-sizing: border-box;
 }
 
 body {
 	font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.paint__container {
+	background: var(--tools-bg);
+}
+
+.paint {
+	padding: 20px;
+	max-width: 1440px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.paint__tools-element {
+	border-radius: var(--tools-border-radius);
+	padding: 10px 15px;
+	color: #fff;
+	background: var(--tools-bg);
+	font-size: 24px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.paint__tool-name {
+	font-size: 24px;
+	font-weight: 700;
+	cursor: auto;
+}
+
+.paint__tools {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.paint__tools-brush-color {
+	cursor: pointer;
+}
+
+.paint__tools-size-span {
+	cursor: auto;
+}
+
+.paint__board {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.paint__board-bg-color-input {
+	cursor: pointer;
+}
+
+@media (hover: hover) {
+	.paint__tools-element:hover {
+		filter: opacity(0.75);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	}
+}
+
+.paint__tools-element:active {
+	filter: opacity(0.5);
+	box-shadow: 0 3px 6px rgba(255, 255, 255, 0.16),
+		0 3px 6px rgba(255, 255, 255, 0.23);
+	transform: scale(0.95);
 }

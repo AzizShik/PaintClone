@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Paint Clone</title>
 </head>
+
 <body>
 
+  <div class="paint__container">
+    <div class="paint">
+      <div class="paint__tool-name paint__tools-element">Brush</div>
+      <div class="paint__tools">
+        <button class="paint__tools-brush paint__tools-element"><i class="fa-solid fa-brush"></i></button>
+        <input type="color" class="paint__tools-brush-color">
+        <span class="paint__tools-size-span paint__tools-element">10</span>
+        <input type="range" class="paint__tools-brush-size" min="0" max="50">
+      </div>
+      <div class="paint__board">
+        <span class="paint__board-bg-color paint__tools-element">
+          <i class="fa-solid fa-fill-drip"></i>
+        </span>
+        <input type="color" class="paint__board-bg-color-input">
+        <button class="paint__board-elaser paint__tools-element">
+          <i class="fa-solid fa-eraser"></i>
+        </button>
+        <button class="paint__board-undo paint__tools-element">
+          <i class="fa-solid fa-rotate-left"></i>
+        </button>
+        <button class="paint__board-save-ls paint__tools-element">
+          <i class="fa-sharp fa-solid fa-upload"></i>
+        </button>
+        <button class="paint__board-upload-ls paint__tools-element">
+          <i class="fa-sharp fa-solid fa-download"></i>
+        </button>
+        <button class="paint__board-delete paint__tools-element">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+        <button class="paint__board-save-image paint__tools-element">
+          <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <div class="board"></div>
 
   <script src="js/script.js"></script>
 </body>
+
 </html>
