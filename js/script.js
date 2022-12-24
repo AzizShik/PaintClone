@@ -19,6 +19,7 @@ window.addEventListener('load', () => {
 	const paintSaveLS = document.querySelector('.paint__board-save-ls');
 	const paintUploadLS = document.querySelector('.paint__board-upload-ls');
 	const paintClearLS = document.querySelector('.paint__board-delete');
+	const downloadBtn = document.querySelector('.paint__board-save-image');
 
 	const canvas = document.createElement('canvas');
 	canvas.id = 'canvas';
@@ -100,6 +101,11 @@ window.addEventListener('load', () => {
 		currentSize = inputValue;
 		context.lineWidth = currentSize;
 		paintToolsSizeSpan.textContent = `${zeroPrefix(inputValue)}`;
+	});
+
+	downloadBtn.addEventListener('click', () => {
+		downloadBtn.href = canvas.toDataURL('image/jpeg', 1);
+		downloadBtn.download = 'paint-example.jpeg';
 	});
 
 	function zeroPrefix(number) {

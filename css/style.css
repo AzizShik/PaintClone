@@ -24,6 +24,10 @@ body {
 	font-weight: 400;
 }
 
+button {
+	border: none;
+}
+
 body::-webkit-scrollbar {
 	-webkit-appearance: none;
 	background: #f1f2f3;
