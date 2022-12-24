@@ -16,6 +16,9 @@ window.addEventListener('load', () => {
 	);
 	const uploadLS = document.querySelector('.paint__board-upload-ls');
 	const paintUndoToolsElement = document.querySelector('.paint__board-undo');
+	const paintSaveLS = document.querySelector('.paint__board-save-ls');
+	const paintUploadLS = document.querySelector('.paint__board-upload-ls');
+	const paintClearLS = document.querySelector('.paint__board-delete');
 
 	const canvas = document.createElement('canvas');
 	canvas.id = 'canvas';
@@ -55,6 +58,21 @@ window.addEventListener('load', () => {
 	paintUndoToolsElement.addEventListener('click', () => {
 		paintDataArr = [];
 		createCanvas();
+	});
+
+	paintSaveLS.addEventListener('click', () => {
+		localStorage.setItem('drawArr', JSON.stringify(paintDataArr));
+	});
+
+	paintUploadLS.addEventListener('click', () => {
+		if (localStorage.getItem('drawArr') !== null) {
+			paintDataArr = JSON.parse(localStorage.getItem('drawArr'));
+			restoreDrawn();
+		}
+	});
+
+	paintClearLS.addEventListener('click', () => {
+		localStorage.removeItem('drawArr');
 	});
 
 	function displayBrush() {
